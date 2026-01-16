@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="text-sm">
             <div className="font-semibold text-text">Compliance</div>
             <div className="mt-2 text-muted">
-              Add your brokerage name, license #, and service area.
+              {/* Add your brokerage name, license #, and service area. */}
               <div className="mt-1 text-xs text-muted/80">
                 This site is for informational purposes and does not constitute financial advice.
               </div>
