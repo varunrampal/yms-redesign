@@ -1,0 +1,27 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* Brand palette + neutrals (Tailwind v4 CSS-first) */
+@theme {
+  /* Brand */
+  --color-brand: rgb(0, 145, 224);
+  --color-brand-hover: rgb(0, 120, 200);
+  --color-brand-active: rgb(0, 95, 170);
+  --color-brand-tint: rgb(231, 247, 255);
+
+  /* Neutrals */
+  --color-border: #e6eaf0;
+  --color-text: #0b1220;
+  --color-muted: #5b677a;
+}
+
+/* Optional: base polish */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    color: var(--color-text);
+    background: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
