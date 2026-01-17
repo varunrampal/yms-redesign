@@ -18,7 +18,7 @@ export default function Navbar() {
   { label: "Affordability", anchor: "calculators", route: "/affordability" },
   { label: "Services", anchor: "services", route: "/services" },
   { label: "Mortgages", route: "/mortgages" }, // dropdown
-  { label: "FAQ", anchor: "faq", route: "/faq" },
+  { label: "FAQ", route: "/faq" },
   { label: "Contact", anchor: "contact", route: "/contact" },
 ];
 

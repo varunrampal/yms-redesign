@@ -24,7 +24,7 @@ export default function Home() {
         <Calculators />
         <Reviews />
         
-        <FAQ />
+        {/* <FAQ /> */}
         <ContactCTA />
       </main>
       {/* <Footer /> */}

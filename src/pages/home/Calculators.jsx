@@ -1,12 +1,13 @@
 import React from "react";
 import Container from "../../components/layout/Container.jsx";
 import Card from "../../components/ui/Card.jsx";
+import { Link } from "react-router-dom";
 
 export default function Calculators() {
   const cals = [
-    { title: "Mortgage Payment Calculator", desc: "Estimate payments in seconds.", icon: "🧮" },
-    { title: "Affordability / Qualifier", desc: "See what you can qualify for.", icon: "📊" },
-    { title: "Refinance Savings", desc: "Estimate potential monthly savings.", icon: "💡" },
+    { title: "Mortgage Payment Calculator", desc: "Estimate payments in seconds.", icon: "🧮", to: "/mortgagepaymentcalculator" },
+    { title: "Affordability / Qualifier", desc: "See what you can qualify for.", icon: "📊", to: "/mortgageaffordability" },
+    { title: "Refinance Savings", desc: "Estimate potential monthly savings.", icon: "💡", to: "/" },
   ];
 
   return (
@@ -26,10 +27,15 @@ export default function Calculators() {
                 </div>
                 <div className="text-lg font-extrabold text-text">{c.title}</div>
               </div>
+
               <div className="mt-2 text-sm text-muted">{c.desc}</div>
-              <a href="#contact" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
+
+              <Link
+                to={c.to}
+                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand"
+              >
                 Open <span className="transition group-hover:translate-x-0.5">→</span>
-              </a>
+              </Link>
             </Card>
           ))}
         </div>

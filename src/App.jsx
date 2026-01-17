@@ -9,6 +9,8 @@ import MortgageType from "./pages/MortgageType";
 import FAQ from "./pages/home/FAQ.jsx";
 import ContactCTA from "./pages/home/ContactCTA.jsx";
 import Mortgages from "./pages/Mortgages.jsx";
+import MotgageQualifierCalculator from "./pages/MortgageQualifierCalculator.jsx";
+import MortgagePaymentCalculator from "./pages/MortgagePaymentCalculator.jsx";
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
          <Route path="/contact" element={<ContactCTA/>} />
          <Route path="/mortgages" element={<Mortgages />} />
         <Route path="/mortgages/:type" element={<MortgageType />} />
+         <Route path="/mortgageaffordability" element={<MotgageQualifierCalculator />} />
+         <Route path="/mortgagepaymentcalculator" element={<MortgagePaymentCalculator />} />
       </Route>
     </Routes>
   );

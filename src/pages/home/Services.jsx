@@ -29,7 +29,7 @@ const onHome = pathname === "/";
          {onHome && (
   <div className="hidden sm:block">
     <Button variant="outline" href="#contact" icon="💬">
-      Ask a Question
+      Have a Question?
     </Button>
   </div>
 )}

@@ -10,7 +10,15 @@ export default function ContactCTA() {
   return (
     <section id="contact">
       <Container className="py-12 sm:py-16">
-        <Card className="relative overflow-hidden">
+          <h1 className="text-2xl font-extrabold tracking-tight text-text">
+            Contact Us
+          </h1>
+
+          <p className="mt-3 max-w-2xl text-muted">
+            Explore the most common mortgage types and learn which options may fit your goals.
+            
+          </p>
+        <Card className="relative overflow-hidden mt-5">
           <div className="grid gap-0 lg:grid-cols-2">
             <div className="relative p-7 sm:p-10 bg-gradient-to-br from-brand-tint to-white">
               <div
