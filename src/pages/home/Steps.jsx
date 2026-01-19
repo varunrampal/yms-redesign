@@ -18,7 +18,7 @@ export default function Steps() {
             <h2 className="text-2xl font-extrabold tracking-tight text-text">A professional, 3-step process</h2>
             <p className="mt-2 text-muted">Fast, transparent, and supported through closing.</p>
           </div>
-          <Button href="#apply" className="w-fit" icon="🚀">
+          <Button href="/mortgageapplication" className="w-fit" icon="🚀">
             Start My Application
           </Button>
         </div>

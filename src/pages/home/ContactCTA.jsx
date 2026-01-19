@@ -35,9 +35,9 @@ export default function ContactCTA() {
               </p>
 
               <div className="relative mt-6 flex flex-wrap gap-3" id="book">
-                <Button href="#apply" icon="✅">Get Pre-Approved</Button>
+                <Button href="#apply" icon="✅">Apply Now</Button>
                 <Button variant="outline" href="tel:6042172992" icon="📞">Call</Button>
-                <Button variant="outline" href="mailto:info@themortgages.net" icon="✉️">Email</Button>
+                <Button variant="outline" href="mailto:Gavin.Sharma@ymscanada.ca" icon="✉️">Email</Button>
               </div>
 
               <div className="relative mt-6 grid gap-3 sm:grid-cols-2">

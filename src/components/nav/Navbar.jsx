@@ -183,8 +183,8 @@ const onHome = pathname === "/";
   {/* <Button variant="outline" href="#book" icon="📅">
     Book a Call
   </Button> */}
-  <Button href="#apply" icon="✅">
-    Get Pre-Approved
+  <Button href="/mortgageapplication" icon="✅">
+   Apply Now
   </Button>
 </div>
 

@@ -401,6 +401,40 @@
     @apply rounded-2xl border border-[var(--color-border)] bg-white p-4;
   }
 }
+@layer utilities {
+  .animate-step {
+    width: 100%;
+  }
 
+  .animate-step-next {
+    animation: stepNext 260ms ease-out both;
+  }
+
+  .animate-step-back {
+    animation: stepBack 260ms ease-out both;
+  }
+
+  @keyframes stepNext {
+    from {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes stepBack {
+    from {
+      opacity: 0;
+      transform: translateX(-24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
 
 

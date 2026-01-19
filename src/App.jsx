@@ -11,6 +11,7 @@ import ContactCTA from "./pages/home/ContactCTA.jsx";
 import Mortgages from "./pages/Mortgages.jsx";
 import MotgageQualifierCalculator from "./pages/MortgageQualifierCalculator.jsx";
 import MortgagePaymentCalculator from "./pages/MortgagePaymentCalculator.jsx";
+import MortgageApplication from "./pages/MortgageApplication.jsx";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/mortgages/:type" element={<MortgageType />} />
          <Route path="/mortgageaffordability" element={<MotgageQualifierCalculator />} />
          <Route path="/mortgagepaymentcalculator" element={<MortgagePaymentCalculator />} />
+            <Route path="/mortgageapplication" element={<MortgageApplication />} />
       </Route>
     </Routes>
   );

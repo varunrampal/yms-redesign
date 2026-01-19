@@ -4,12 +4,12 @@ import Card from "../../components/ui/Card.jsx";
 
 export default function Reviews() {
   const reviews = [
-    { name: "Client A", text: "Clear guidance, fast responses, and a smooth closing." },
-    { name: "Client B", text: "Helped us compare lenders and saved us money at renewal." },
-    { name: "Client C", text: "Made the process simple—great communication throughout." },
-    { name: "Client D", text: "Got us approved when the bank said no. Highly recommend." },
-    { name: "Client E", text: "Professional, transparent, and very organized." },
-    { name: "Client F", text: "Quick pre-approval and great advice on documents." },
+    { name: "Henry", text: "Clear guidance, fast responses, and a smooth closing." },
+    { name: "Manjeet", text: "Helped us compare lenders and saved us money at renewal." },
+    { name: "Olivia", text: "Made the process simple—great communication throughout." },
+    { name: "Sukhjeet", text: "Got us approved when the bank said no. Highly recommend." },
+    { name: "Arthur", text: "Professional, transparent, and very organized." },
+    { name: "Oscar", text: "Quick pre-approval and great advice on documents." },
   ];
 
   return (

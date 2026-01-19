@@ -18,7 +18,7 @@ export default function Home() {
       {/* <Navbar /> */}
       <main className="relative">
         <Hero />
-        <QuoteStrip />
+        {/* <QuoteStrip /> */}
         <Services />
         <Steps />
         <Calculators />

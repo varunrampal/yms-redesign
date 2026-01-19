@@ -39,7 +39,7 @@ export default function Hero() {
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Button href="#apply" icon="✅">Get Pre-Approved</Button>
+              <Button href="#apply" icon="✅">Apply Now</Button>
              <Button variant="outline" href="tel:6042172992" icon="📞">Call</Button>
             </div>
 
@@ -89,27 +89,41 @@ export default function Hero() {
             </div>
 
             <div className="relative mt-6 grid gap-3 text-sm">
-              <div className="rounded-3xl border border-border bg-white/70 p-4 shadow-lg">
-                <div className="font-semibold text-text">What you’ll get</div>
-                <ul className="mt-2 grid gap-1 text-muted">
-                  <li>• Simple, stress-free mortgages</li>
-                  <li>• 10+ years experience</li>
-                  <li>• Clear, honest advice</li>
-                  <li>• Tailored mortgage solutions</li>
-                  <li>• Confidence at every step</li>
-                  <li>• Long-term client focus</li>
-                  <li>• First-time buyers to refinances</li>
-                  <li>• Investing & debt consolidation</li>
-                  <li>• Home equity access</li>
-                  <li>• Best option for your future plans</li>
-                </ul>
-      
-              </div>
+             <div className="rounded-3xl border border-border bg-white/70 p-4 shadow-lg">
+  <div className="font-semibold text-text">What you’ll get</div>
+
+  <div className="mt-3 grid gap-4 sm:grid-cols-[1fr_180px] sm:items-start">
+    {/* LEFT: list */}
+    <ul className="grid gap-1 text-muted">
+      <li>• Simple, stress-free mortgages</li>
+      <li>• 10+ years experience</li>
+      <li>• Clear, honest advice</li>
+      <li>• Tailored mortgage solutions</li>
+      <li>• Confidence at every step</li>
+      <li>• Long-term client focus</li>
+      <li>• First-time buyers to refinances</li>
+      <li>• Investing & debt consolidation</li>
+      <li>• Home equity access</li>
+      <li>• Best option for your future plans</li>
+    </ul>
+
+    {/* RIGHT: image */}
+    <div className="overflow-hidden">
+      <img
+        src="/gaurav.png"   // change to your image path
+        alt="Gaurav Sharma"
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</div>
+
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <div className="rounded-3xl border border-border bg-white/80 p-4 shadow-lg">
                   <div className="font-semibold text-text">Email</div>
-                  <div className="mt-1 text-muted">info@themortgages.net</div>
+                  <div className="mt-1 text-muted">Gavin.Sharma@ymscanada.ca</div>
                 </div>
                 <div className="rounded-3xl border border-border bg-white/80 p-4 shadow-lg">
                   <div className="font-semibold text-text">Phone</div>
@@ -117,10 +131,10 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-border bg-white/80 p-4 shadow-lg">
+              {/* <div className="rounded-3xl border border-border bg-white/80 p-4 shadow-lg">
                 <div className="font-semibold text-text">Next step</div>
                 <div className="mt-1 text-muted">Use the Let’s Connect below—we’ll reply with best-fit options.</div>
-              </div>
+              </div> */}
             </div>
           </Card>
         </div>
