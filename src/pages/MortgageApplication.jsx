@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import emailjs from "@emailjs/browser";
 import Container from "../components/layout/Container.jsx";
 import Card from "../components/ui/Card.jsx";
 
@@ -22,24 +23,37 @@ const moneyOnly = (v) => String(v || "").replace(/[^\d]/g, "");
 const phoneOnly = (v) => String(v || "").replace(/[^\d+]/g, "");
 const emailOk = (v) => /^\S+@\S+\.\S+$/.test(String(v || "").trim());
 
+
+function formatSubmittedAt(d = new Date()) {
+  const pad = (n) => String(n).padStart(2, "0");
+  const yyyy = d.getFullYear();
+  const mm = pad(d.getMonth() + 1);
+  const dd = pad(d.getDate());
+  const hh = pad(d.getHours());
+  const min = pad(d.getMinutes());
+  return `${yyyy}-${mm}-${dd} ${hh}:${min}`;
+}
+
+
+
 export default function MortgageApplication() {
   const [step, setStep] = useState(0);
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState("");
 
-const [dir, setDir] = useState(1); // 1 = next (slide left), -1 = back (slide right)
+  const [dir, setDir] = useState(1); // 1 = next (slide left), -1 = back (slide right)
 
-const goNext = () => {
-  if (!canNext) return;
-  setDir(1);
-  setStep((s) => Math.min(steps.length - 1, s + 1));
-};
+  const goNext = () => {
+    if (!canNext) return;
+    setDir(1);
+    setStep((s) => Math.min(steps.length - 1, s + 1));
+  };
 
-const goBack = () => {
-  setDir(-1);
-  setStep((s) => Math.max(0, s - 1));
-};
+  const goBack = () => {
+    setDir(-1);
+    setStep((s) => Math.max(0, s - 1));
+  };
 
 
 
@@ -98,6 +112,43 @@ const goBack = () => {
   const canNext = stepErrors.length === 0;
   const isLast = step === steps.length - 1;
 
+
+
+  async function sendWithEmailJS(payload) {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const templateParams = {
+      full_name: payload.fullName,
+      phone: payload.phone,
+      email: payload.email,
+
+      purpose: payload.purpose,
+      city: payload.city,
+      province: payload.province,
+      price_or_value: payload.priceOrValue,
+      down_or_equity: payload.downOrEquity,
+      mortgage_needed: payload.mortgageNeeded,
+      closing_date: payload.closingDate || "-",
+
+      employment_type: payload.employmentType,
+      income_annual: payload.incomeAnnual,
+      monthly_debts: payload.monthlyDebts || "-",
+
+      co_applicant: payload.hasCoApplicant ? "Yes" : "No",
+      co_name: payload.coName || "-",
+      co_income: payload.coIncomeAnnual || "-",
+
+      notes: payload.notes || "-",
+      submitted_at: formatSubmittedAt(),
+    };
+
+    return emailjs.send(serviceId, templateId, templateParams, publicKey);
+  }
+
+
+
   async function onSubmit() {
     setError("");
     const errs = validateAll(form);
@@ -111,32 +162,19 @@ const goBack = () => {
 
       const payload = {
         ...form,
-        phone: phoneOnly(form.phone),
-        priceOrValue: moneyOnly(form.priceOrValue),
-        downOrEquity: moneyOnly(form.downOrEquity),
-        mortgageNeeded: moneyOnly(form.mortgageNeeded),
-        incomeAnnual: moneyOnly(form.incomeAnnual),
-        monthlyDebts: moneyOnly(form.monthlyDebts),
-        coIncomeAnnual: moneyOnly(form.coIncomeAnnual),
-        company,
         submittedAt: new Date().toISOString(),
       };
 
-      const res = await fetch("/api/mortgage-application", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data?.message || "Submission failed.");
+      await sendWithEmailJS(payload);
 
       setDone(true);
     } catch (e) {
-      setError(e?.message || "Something went wrong.");
+      console.log("Submission error:", e);
+      setError("Could not send. Please try again.");
     } finally {
       setLoading(false);
     }
+
   }
 
   if (done) {
@@ -169,7 +207,7 @@ const goBack = () => {
             Mortgage Application
           </h1>
           <p className="mt-2 text-muted">
-           Complete our mortgage application in 2 minutes & we will get back to you.
+            Complete our mortgage application in 2 minutes & we will get back to you.
           </p>
         </div>
 
@@ -211,20 +249,20 @@ const goBack = () => {
               </div>
 
               {/* Body */}
-             <div className="mt-6 relative overflow-hidden">
-  <div
-    key={step}
-    className={[
-      "animate-step",
-      dir === 1 ? "animate-step-next" : "animate-step-back",
-    ].join(" ")}
-  >
-    {step === 0 && <ContactStep form={form} set={set} />}
-    {step === 1 && <DealStep form={form} set={set} />}
-    {step === 2 && <IncomeStep form={form} set={set} />}
-    {step === 3 && <ReviewStep form={form} />}
-  </div>
-</div>
+              <div className="mt-6 relative overflow-hidden">
+                <div
+                  key={step}
+                  className={[
+                    "animate-step",
+                    dir === 1 ? "animate-step-next" : "animate-step-back",
+                  ].join(" ")}
+                >
+                  {step === 0 && <ContactStep form={form} set={set} />}
+                  {step === 1 && <DealStep form={form} set={set} />}
+                  {step === 2 && <IncomeStep form={form} set={set} />}
+                  {step === 3 && <ReviewStep form={form} />}
+                </div>
+              </div>
 
               {/* Inline validation */}
               {stepErrors.length > 0 && (
@@ -237,7 +275,7 @@ const goBack = () => {
               <div className="mt-6 flex items-center justify-between gap-3">
                 <button
                   type="button"
-                 onClick={goBack}
+                  onClick={goBack}
                   disabled={step === 0 || loading}
                   className="rounded-2xl border border-border bg-white/80 px-4 py-3 text-sm font-semibold text-text transition hover:bg-brand-tint disabled:opacity-50"
                 >
