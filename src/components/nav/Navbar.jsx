@@ -189,7 +189,7 @@ const onHome = pathname === "/";
 </div>
 
         <div className="md:hidden">
-          <Button variant="outline" href="#apply" icon="✅">
+          <Button variant="outline" href="/mortgageapplication" icon="✅">
             Apply
           </Button>
         </div>
