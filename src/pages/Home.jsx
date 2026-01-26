@@ -24,13 +24,13 @@ export default function Home() {
         <GuaranteeSection/>
          <Calculators />
         {/* <QuoteStrip /> */}
-        <Services />
+        {/* <Services /> */}
         {/* <Steps /> */}
        
         <Reviews />
         
         {/* <FAQ /> */}
-        <ContactCTA />
+        {/* <ContactCTA /> */}
       </main>
       {/* <Footer /> */}
       <StickyMobileCTA />
