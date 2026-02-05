@@ -13,10 +13,13 @@ import MotgageQualifierCalculator from "./pages/MortgageQualifierCalculator.jsx"
 import MortgagePaymentCalculator from "./pages/MortgagePaymentCalculator.jsx";
 import MortgageApplication from "./pages/MortgageApplication.jsx";
 import ServiceDetails from "./pages/services/ServiceDetails.jsx";
+import WhatsAppMortgageBot from "./components/whatsapp/WhatsAppMortgageBot";
 
 export default function App() {
   return (
+    <>
     <Routes>
+     
       <Route element={<SiteLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/affordability" element={<Affordability />} />
@@ -26,10 +29,12 @@ export default function App() {
          <Route path="/mortgages" element={<Mortgages />} />
         <Route path="/mortgages/:type" element={<MortgageType />} />
          <Route path="/mortgageaffordability" element={<MotgageQualifierCalculator />} />
-         <Route path="/mortgagepaymentcalculator" element={<MortgagePaymentCalculator />} />
-            <Route path="/mortgageapplication" element={<MortgageApplication />} />
+        <Route path="/mortgagepaymentcalculator" element={<MortgagePaymentCalculator />} />
+        <Route path="/mortgageapplication" element={<MortgageApplication />} />
             <Route path="/services/:slug" element={<ServiceDetails />} />
       </Route>
     </Routes>
+     <WhatsAppMortgageBot />
+     </>
   );
 }
