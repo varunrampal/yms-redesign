@@ -26,9 +26,8 @@ export default function Button({
   const style =
     variant === "primary"
       ? {
-          background:
-            "linear-gradient(135deg, var(--color-brand) 0%, color-mix(in oklab, var(--color-brand) 70%, white) 55%, var(--color-brand-hover) 100%)",
-          boxShadow: "0 16px 48px rgb(from var(--color-brand) r g b / 0.22)",
+          background: "var(--color-brand)", // ✅ solid color (no gradient)
+          boxShadow: "0 10px 28px rgb(from var(--color-brand) r g b / 0.18)",
         }
       : variant === "outline"
       ? { borderColor: "rgb(from var(--color-brand) r g b / 0.35)" }
@@ -38,9 +37,6 @@ export default function Button({
     <>
       {icon ? <span className="text-base">{icon}</span> : null}
       <span>{children}</span>
-      {variant === "primary" ? (
-        <span className="pointer-events-none absolute -right-7 -top-7 h-20 w-20 rounded-full bg-white/18 blur-2xl" aria-hidden="true" />
-      ) : null}
     </>
   );
 

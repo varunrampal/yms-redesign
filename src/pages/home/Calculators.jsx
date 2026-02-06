@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Calculators() {
   const cals = [
     { title: "Mortgage Payment Calculator", desc: "A smart home search starts with knowing your budget. Our free mortgage calculator provides a clear estimate of your mortgage payments, helping you plan with confidence.", icon: "🧮", to: "/mortgagepaymentcalculator" },
-    { title: "Affordability / Qualifier", desc: "Not sure how much home fits your budget? Our Affordability Calculator helps you quickly estimate a comfortable purchase price so you can shop with clarity and confidence.", icon: "📊", to: "/mortgageaffordability" },
+    { title: "Mortgage Affordability Calculator", desc: "Not sure how much home fits your budget? Our Affordability Calculator helps you quickly estimate a comfortable purchase price so you can shop with clarity and confidence.", icon: "📊", to: "/mortgageaffordability" },
     // { title: "Refinance Savings", desc: "Estimate potential monthly savings.", icon: "💡", to: "/" },
   ];
 

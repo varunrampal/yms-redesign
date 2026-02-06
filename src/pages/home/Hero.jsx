@@ -23,35 +23,59 @@ export default function Hero() {
 
 
                   {/* Geoff Lee–style CTA blocks */}
-                  <div className="mx-auto max-w-7xl px-6">
-                        <div className="-mt-10 grid gap-4 md:-mt-14 md:grid-cols-2">
-                              <Link
-                                    to='/mortgagepaymentcalculator'
-                                    className="group relative overflow-hidden rounded-2xl border-2 border-slate-900 bg-white p-6 shadow-lg transition hover:bg-slate-50"
-                              >
-                                    <div className="flex items-start justify-between gap-6">
-                                          <div>
-                                                <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-500">House Calculator</div>
-                                                <div className="mt-2 text-2xl font-extrabold leading-tight text-slate-900">How much house can I afford?</div>
-                                          </div>
-                                          <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-slate-900 text-xl font-extrabold text-slate-900 transition group-hover:translate-x-0.5">→</div>
-                                    </div>
-                              </Link>
+                 <div className="mx-auto max-w-7xl px-6">
+  <div className="-mt-10 grid gap-4 md:-mt-14 md:grid-cols-3">
+    <Link
+      to="/mortgagepaymentcalculator"
+      className="group relative overflow-hidden rounded-2xl bg-sky-600 p-6 text-white shadow-lg transition hover:bg-sky-700"
+    >
+      <div className="flex items-start justify-between gap-6">
+        <div>
+          <div className="mt-2 text-lg font-extrabold leading-tight whitespace-nowrap truncate">
+            Mortgage Payment Calculator
+          </div>
+        </div>
+        {/* <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-xl font-extrabold transition group-hover:translate-x-0.5">
+          →
+        </div> */}
+      </div>
+    </Link>
+        <Link
+      to="/mortgageaffordability"
+      className="group relative overflow-hidden rounded-2xl bg-sky-600 p-6 text-white shadow-lg transition hover:bg-sky-700"
+    >
+      <div className="flex items-start justify-between gap-6">
+        <div>
+          <div className="mt-2 text-lg font-extrabold leading-tight whitespace-nowrap truncate">
+            Mortgage Affordability Calculator
+          </div>
+        </div>
+        {/* <div className="flex h-5 w-12 items-center justify-center rounded-full border-2 border-white text-xl font-extrabold transition group-hover:translate-x-0.5">
+          →
+        </div> */}
+      </div>
+    </Link>
+
+    <Link
+      to="/mortgageapplication"
+      className="group relative overflow-hidden rounded-2xl bg-sky-600 p-6 text-white shadow-lg transition hover:bg-sky-700"
+    >
+      <div className="flex items-start justify-between gap-6">
+        <div>
+          <div className="mt-2 text-lg font-extrabold leading-tight whitespace-nowrap truncate">
+            Get Pre-Approved
+          </div>
+        </div>
+        {/* <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-xl font-extrabold transition group-hover:translate-x-0.5">
+          →
+        </div> */}
+      </div>
+    </Link>
 
 
-                              <Link to='/mortgageapplication' className="group relative overflow-hidden rounded-2xl bg-sky-600 p-6 text-white shadow-lg transition hover:bg-sky-700">
-                                    <div className="flex items-start justify-between gap-6">
-                                          <div>
-                                                <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-white/90">Apply Now</div>
-                                                <div className="mt-2 text-2xl font-extrabold leading-tight">Get Pre-Approved</div>
-                                          </div>
-                                          <div className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white text-xl font-extrabold transition group-hover:translate-x-0.5">→</div>
-                                    </div>
-                              </Link>
+  </div>
+</div>
 
-
-                        </div>
-                  </div>
             </section>
       );
 }

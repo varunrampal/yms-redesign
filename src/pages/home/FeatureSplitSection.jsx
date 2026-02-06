@@ -42,7 +42,7 @@ From first-time purchases and refinancing to investing, debt consolidation, and 
 
 <div className="mt-10">
 
-  <Button href="/mortgageapplication" icon="✅">
+  <Button href="/mortgageapplication">
    Apply Now
   </Button>
 </div>

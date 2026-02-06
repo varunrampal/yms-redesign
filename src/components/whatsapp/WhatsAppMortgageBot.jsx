@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function WhatsAppMortgageBot() {
-  const phoneNumber = "919540430778"; // your WhatsApp number (no +)
+  const phoneNumber = "16042172992"; // your WhatsApp number (no +)
 
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
@@ -18,14 +18,7 @@ export default function WhatsAppMortgageBot() {
 📞 Phone: ${phone}
 📌 Type: ${type}
 
-Please select how we may assist you today:
-
-🏡 Buy a Home  
-🔄 Refinance or Mortgage Renewal  
-📉 Mortgage Rates  
-💰 Affordability & Qualification  
-👤 Speak with a Mortgage Advisor
-    `;
+Thank You for contacting us. We will get back to you shortly`;
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
