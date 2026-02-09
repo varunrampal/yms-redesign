@@ -4,12 +4,12 @@ import Card from "../../components/ui/Card.jsx";
 
 export default function Reviews() {
   const reviews = [
-    { name: "Henry", text: "Clear guidance, fast responses, and a smooth closing." },
-    { name: "Manjeet", text: "Helped us compare lenders and saved us money at renewal." },
-    { name: "Olivia", text: "Made the process simple—great communication throughout." },
-    { name: "Sukhjeet", text: "Got us approved when the bank said no. Highly recommend." },
-    { name: "Arthur", text: "Professional, transparent, and very organized." },
-    { name: "Oscar", text: "Quick pre-approval and great advice on documents." },
+    { name: "Brittney Smith", text: "Clear guidance, fast responses, and a smooth closing- even with a tight timeline." },
+    { name: "Manjeet Sidhu", text: "Helped us compare lenders and saved us thousands in interest." },
+    { name: "Kamal Ahuja", text: "Made the entire mortgage process simple with excellent communication throughout." },
+    { name: "Amandeep Singh", text: "Got us approved after the bank said no. Strong knowledge of alternative lending." },
+    { name: "Arthur", text: "Professional, transparent and extremely organizedfrom start to finish." },
+    { name: "Jennika Duncan", text: "Quick pre-approval and clear guidance on required documents." },
   ];
 
   return (

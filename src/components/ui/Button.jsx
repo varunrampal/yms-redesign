@@ -24,14 +24,14 @@ export default function Button({
       : `${base} ${soft} ${className}`;
 
   const style =
-    variant === "primary"
-      ? {
-          background: "var(--color-brand)", // ✅ solid color (no gradient)
-          boxShadow: "0 10px 28px rgb(from var(--color-brand) r g b / 0.18)",
-        }
-      : variant === "outline"
-      ? { borderColor: "rgb(from var(--color-brand) r g b / 0.35)" }
-      : undefined;
+   variant === "primary"
+    ? {
+        background: "#15803d", // green-700
+        boxShadow: "0 10px 28px rgb(21 128 61 / 0.25)",
+      }
+    : variant === "outline"
+    ? { borderColor: "rgb(21 128 61 / 0.35)" }
+    : undefined;
 
   const content = (
     <>

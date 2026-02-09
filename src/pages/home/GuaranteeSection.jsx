@@ -21,9 +21,9 @@ Approved
 <div>
 <div className="mb-6 h-1 w-20 bg-[#0069a8]" />
 <h3 className="text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
-Getting You
+Mortgage Pre-Approval
 <br />
-<span className="text-slate-600">Pre-Approved in 5 Hours!</span>
+<span className="text-slate-600">Fast, Simple, Reliable</span>
 </h3>
 </div>
 

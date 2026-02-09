@@ -8,12 +8,13 @@ return (
 {/* Left image card */}
 <div className="relative">
 <div className="overflow-hidden rounded-[44px] rounded-bl-[120px] bg-white shadow-xl ring-1 ring-slate-200">
-<img
-src="/featured-section-image.jpg"
-alt="Happy family"
-className="h-[360px] w-full object-cover md:h-[520px]"
-/>
+  <img
+    src="/gaurav.png"
+    alt="Gaurav Sharma"
+    className="h-[360px] w-full object-contain md:h-[520px]"
+  />
 </div>
+
 </div>
 
 

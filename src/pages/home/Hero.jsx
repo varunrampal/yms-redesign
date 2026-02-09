@@ -58,7 +58,7 @@ export default function Hero() {
 
     <Link
       to="/mortgageapplication"
-      className="group relative overflow-hidden rounded-2xl bg-sky-600 p-6 text-white shadow-lg transition hover:bg-sky-700"
+      className="group relative overflow-hidden rounded-2xl bg-green-700 p-6 text-white shadow-lg transition hover:bg-sky-700"
     >
       <div className="flex items-start justify-between gap-6">
         <div>

@@ -22,7 +22,7 @@ export default function Home() {
         <Hero />
         <FeatureSplitSection/>
         <GuaranteeSection/>
-         <Calculators />
+         {/* <Calculators /> */}
         {/* <QuoteStrip /> */}
         {/* <Services /> */}
         {/* <Steps /> */}

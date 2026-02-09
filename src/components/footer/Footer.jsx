@@ -49,7 +49,28 @@ export default function Footer() {
 
         {/* Quick contact pills (optional) */}
         <div className="mt-5 flex flex-wrap gap-2">
+        
           <a
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-semibold text-text hover:bg-brand-tint"
+          >Services</a>
+           <a
+            href="/affordability"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-semibold text-text hover:bg-brand-tint"
+          >Calculators</a>
+            <a
+            href="/mortgages"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-semibold text-text hover:bg-brand-tint"
+          >Mortgages</a>
+           <a
+            href="/faq"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-semibold text-text hover:bg-brand-tint"
+          >Faq</a>
+           <a
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-semibold text-text hover:bg-brand-tint"
+          >Contact</a>
+          {/* <a
             href="/contact"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-semibold text-text hover:bg-brand-tint"
           >
@@ -66,13 +87,13 @@ export default function Footer() {
             className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-3 py-1.5 text-xs font-semibold text-text hover:bg-brand-tint"
           >
             <span aria-hidden="true">🧮</span> Calculators
-          </a>
+          </a> */}
         </div>
       </div>
 
       {/* Links */}
-      <div className="md:col-span-3">
-        {/* <div className="text-sm font-extrabold text-text">Links</div> */}
+      {/* <div className="md:col-span-3">
+      
         <div className="mt-3 grid gap-2 text-sm">
           {[
             { label: "Affordability", href: "/mortgageaffordability" },
@@ -92,24 +113,25 @@ export default function Footer() {
             </a>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Compliance */}
+    
+    </div>
       <div className="md:col-span-4">
         {/* <div className="text-sm font-extrabold text-text">Compliance</div> */}
 
         <div className="mt-3 rounded-2xl border border-border bg-white/75 p-4">
           <div className="text-sm font-semibold text-text">Important disclosure</div>
           <p className="mt-2 text-xs leading-5 text-muted">
-            This site is for informational purposes only and does not constitute financial advice.
-            Mortgage approvals are subject to lender requirements and verification.
+            The information contained on this website is provided for general informational purposes only and does not constitute financial, legal, or other professional advice. Mortgage products, rates, terms, and availability are subject to change and are dependent on lender approval, credit qualification, and verification of information. Not all applicants will qualify.
           </p>
 
           {/* Optional: add your details here */}
           <div className="mt-3 grid gap-1 text-xs text-muted">
             <div className="flex items-start gap-2">
               <span aria-hidden="true">📍</span>
-              <span>Serving British Columbia & Canada-wide lenders</span>
+              <span>Serving British Columbia, with access to Canada-wide lenders.</span>
             </div>
             {/* <div className="flex items-start gap-2">
               <span aria-hidden="true">📝</span>
@@ -118,11 +140,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
 
     {/* Bottom bar */}
     <div className="mt-10 flex flex-col gap-3 border-t border-border/60 pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
-      <div>© {new Date().getFullYear()} The Mortgages. All rights reserved.</div>
+      <div>© {new Date().getFullYear()} Apexprimee. All rights reserved.</div>
 
       {/* <div className="flex flex-wrap gap-2">
         <a
