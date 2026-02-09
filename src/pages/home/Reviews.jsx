@@ -16,8 +16,7 @@ export default function Reviews() {
     <section id="reviews">
       <Container className="py-12 sm:py-16">
         <h2 className="text-2xl font-extrabold tracking-tight text-text">Client reviews</h2>
-        <p className="mt-2 text-muted">Replace these with your real Google reviews/testimonials.</p>
-
+      
         <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map((r) => (
             <Card key={r.name} className="p-5">
