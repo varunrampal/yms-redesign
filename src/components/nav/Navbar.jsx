@@ -39,7 +39,7 @@ useEffect(() => {
 }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border bg-white/70 ">
       <Container className="flex h-16 items-center justify-between">
 <Link to="/" className="group flex items-center gap-3">
   <img
@@ -239,25 +239,34 @@ useEffect(() => {
 {/* Overlay */}
 <div
   onClick={() => setOpen(false)}
-  className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
-    open ? "opacity-100 visible" : "opacity-0 invisible"
-  }`}
+  className={`fixed inset-0 z-40 bg-black/60 transition-opacity duration-300 md:hidden ${
+  open ? "opacity-100 visible" : "opacity-0 invisible"
+}`}
 />
 
 {/* Mobile Drawer */}
 <div
   className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm
-              bg-white/70 backdrop-blur-xl border-l border-border shadow-2xl
+              bg-brand text-white border-l border-gray-800 shadow-2xl
               transform transition-all duration-500 ease-out md:hidden
               ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
             `}
 >
+  {/* Close Button */}
+<button
+  onClick={() => setOpen(false)}
+  className="absolute top-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition"
+  aria-label="Close menu"
+>
+  <span className="relative block h-0.5 w-5 bg-white rotate-45" />
+  <span className="absolute block h-0.5 w-5 bg-white -rotate-45" />
+</button>
   <div className="flex flex-col gap-6 px-6 pt-24 text-lg font-semibold">
     
     {/* Affordability */}
     {onHome ? (
       <a
-        href="#calculators"
+        href="/calculators"
         onClick={() => setOpen(false)}
         className="border-b pb-3"
       >
@@ -280,6 +289,20 @@ useEffect(() => {
       className="border-b pb-3"
     >
       Services
+    </Link>
+        <Link
+      to="/faq"
+      onClick={() => setOpen(false)}
+      className="border-b pb-3"
+    >
+      FAQ
+    </Link>
+     <Link
+      to="/faq"
+      onClick={() => setOpen(false)}
+      className="border-b pb-3"
+    >
+      Contact
     </Link>
 
     {/* 📱 Mortgages Accordion */}
@@ -311,6 +334,10 @@ useEffect(() => {
           <Link to="/mortgages/closed" onClick={() => setOpen(false)}>Closed Mortgage</Link>
           <Link to="/mortgages/reverse" onClick={() => setOpen(false)}>Reverse Mortgage</Link>
           <Link to="/mortgages/private" onClick={() => setOpen(false)}>Private Mortgage</Link>
+          <Link to="/mortgages/high-ratio" onClick={() => setOpen(false)}>High-Ratio Mortgage</Link>
+          <Link to="/mortgages/conventional" onClick={() => setOpen(false)}>Conventional Mortgage</Link>
+          <Link to="/mortgages/insured" onClick={() => setOpen(false)}>Insured Mortgage</Link>
+          <Link to="/mortgages/second-heloc" onClick={() => setOpen(false)}>second-heloc</Link>
         </div>
       </div>
     </div>
@@ -333,13 +360,13 @@ useEffect(() => {
       Contact
     </Link>
 
-    {/* Call Button */}
-    <a
-      href="tel:16042172992"
-      className="mt-6 rounded-xl bg-brand px-4 py-3 text-center text-white shadow-lg"
-    >
-      📞 604-217-2992
-    </a>
+    <Button
+    variant="outline"
+    href="/mortgageapplication"
+    className="px-3 py-2 text-sm"
+  >
+    Apply
+  </Button>
   </div>
 </div>
 
