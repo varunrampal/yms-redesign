@@ -248,7 +248,7 @@ useEffect(() => {
 <div
   className={`fixed top-0 right-0 z-50 h-full w-[85%] max-w-sm
               bg-brand text-white border-l border-gray-800 shadow-2xl
-              transform transition-all duration-500 ease-out md:hidden
+              transform transition-all duration-500 ease-out md:hidden overflow-y-auto
               ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
             `}
 >
