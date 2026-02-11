@@ -40,14 +40,14 @@ const SERVICES = {
     ],
   },
 
-  "mortgage-pre-approval": {
-    title: "Mortgage Pre-Approval",
-    subtitle: "Know your budget, strengthen your offer, and shop with confidence.",
-    highlights: ["Fast review", "Document checklist", "Clear range"],
+  "pre-approval-financing": {
+    title: "Pre-Approvals & Financing",
+    subtitle: "Know your budget, secure your rate, and move forward with confidence.",
+    highlights: ["Fast review", " Clear qualification range", "Strategic financing guidance"],
     paragraphs: [
-      "A pre-approval gives you a clear estimate of what you can qualify for before you start shopping. It helps you move faster, make stronger offers, and avoid surprises later.",
-      "We review your income, debts, down payment, and credit profile, then recommend the best strategy based on your goals—lowest payment, best rate, or flexibility.",
-      "You’ll receive a clear checklist and guidance on what to avoid during the process so your approval stays on track.",
+      "A pre-approval gives you a clear understanding of what you qualify for before you start shopping. It strengthens your offer, helps you act quickly, and reduces surprises during the financing process.",
+      "We review your income, debts, down payment, and credit profile to structure the right mortgage solution for your goals—whether that’s the lowest payment, best rate, or maximum flexibility.",
+      "From initial pre-approval to final financing, you’ll receive a clear document checklist, step-by-step guidance, and ongoing support to keep your approval on track all the way to closing.",
     ],
     ctaTitle: "Ready to get pre-approved?",
     ctaText: "Send your details and we’ll reply with next steps and a simple document checklist.",

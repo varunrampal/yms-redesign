@@ -23,8 +23,8 @@ const services = [
     href: "/services/first-time-homebuyer",
   },
   {
-    slug: "mortgage-pre-approval",
-    title: "Mortgage Pre-Approval",
+    slug: "pre-approval-financing",
+    title: "Pre-Approvals & Financing",
     desc: "Get a clear picture of how much you can afford before you shop.",
     tag: "Negotiate",
     icon: "✅",
@@ -75,7 +75,7 @@ const onHome = pathname === "/";
 )}
         </div>
 
-        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
 {services.map((s) => (
   <Card key={s.slug} className="group p-6 transition hover:-translate-y-0.5 hover:shadow-2xl">
     <div className="flex items-center justify-between">
