@@ -14,6 +14,7 @@ import MortgagePaymentCalculator from "./pages/MortgagePaymentCalculator.jsx";
 import MortgageApplication from "./pages/MortgageApplication.jsx";
 import ServiceDetails from "./pages/services/ServiceDetails.jsx";
 import WhatsAppMortgageBot from "./components/whatsapp/WhatsAppMortgageBot";
+import BCGstCalculator from "./pages/BCGstCalculator.jsx"
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
          <Route path="/mortgageaffordability" element={<MotgageQualifierCalculator />} />
         <Route path="/mortgagepaymentcalculator" element={<MortgagePaymentCalculator />} />
         <Route path="/mortgageapplication" element={<MortgageApplication />} />
+        <Route path="/BCGstCalculator" element={<BCGstCalculator />} />
             <Route path="/services/:slug" element={<ServiceDetails />} />
       </Route>
     </Routes>
