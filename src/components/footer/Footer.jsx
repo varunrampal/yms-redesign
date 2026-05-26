@@ -121,6 +121,23 @@ export default function Footer() {
       <div className="md:col-span-4">
         {/* <div className="text-sm font-extrabold text-text">Compliance</div> */}
 
+
+          <div className="relative mt-4 overflow-hidden rounded-xl border border-border">
+            <iframe
+              title="Map showing 2961 Townline Rd, Abbotsford, BC"
+              src="https://www.google.com/maps?q=2961%20Townline%20Rd%2C%20Abbotsford%2C%20BC%20V2T%205J8&output=embed"
+              className="h-64 w-full border-0"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -mt-4 -translate-x-1/2 -translate-y-full">
+              <div className="relative max-w-[250px] rounded-lg bg-white px-3 py-2 text-center text-xs font-semibold text-[#001E52] shadow-lg ring-1 ring-black/10">
+                2961 Townline Rd, Abbotsford, BC V2T 5J8
+                <span className="absolute left-1/2 top-full -translate-x-1/2 border-x-[8px] border-t-[10px] border-x-transparent border-t-white" />
+              </div>
+            </div>
+          </div>
         <div className="mt-3 rounded-2xl border border-border bg-white/75 p-4">
           <div className="text-sm font-semibold text-text">Important disclosure</div>
           <p className="mt-2 text-xs leading-5 text-muted">
@@ -129,15 +146,17 @@ export default function Footer() {
 
           {/* Optional: add your details here */}
           <div className="mt-3 grid gap-1 text-xs text-muted">
-            <div className="flex items-start gap-2">
+            {/* <div className="flex items-start gap-2">
               <span aria-hidden="true">📍</span>
               <span>2961 Townline Rd, Abbotsford, BC V2T 5J8</span>
-            </div>
+            </div> */}
             {/* <div className="flex items-start gap-2">
               <span aria-hidden="true">📝</span>
               <span>Add brokerage name + license # here (if required).</span>
             </div> */}
           </div>
+
+    
         </div>
       </div>
 
