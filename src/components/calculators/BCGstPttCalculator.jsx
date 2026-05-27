@@ -173,7 +173,7 @@ export default function BCGstCalculator() {
             <div className="my-4 border-t border-dashed border-slate-300" />
             <div className="rounded-2xl bg-slate-900 px-5 py-4 text-white">
               <div className="flex items-center justify-between gap-4">
-                <span className="text-sm uppercase tracking-wide text-slate-300">
+                <span className="text-sm uppercase tracking-wide text-[#FFFFFF]">
                   Final Purchase Price Including GST Payable
                 </span>
                 <span className="text-2xl font-bold">

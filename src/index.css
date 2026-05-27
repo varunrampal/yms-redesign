@@ -4,10 +4,10 @@
 /* Brand palette + neutrals (Tailwind v4 CSS-first) */
 @theme {
   /* Brand */
-  --color-brand: rgb(0, 145, 224);
-  --color-brand-hover: rgb(0, 120, 200);
-  --color-brand-active: rgb(0, 95, 170);
-  --color-brand-tint: rgb(231, 247, 255);
+  --color-brand: #E9AE46;
+  --color-brand-hover: #D0952F;
+  --color-brand-active: #B77D1E;
+  --color-brand-tint: #FCF3E3;
 
   /* Neutrals */
   --color-border: #e6eaf0;
@@ -291,6 +291,7 @@
 
   .rangeInput {
     @apply mt-3 w-full;
+    accent-color: #001E52;
   }
 
   .rangeTicks {
@@ -436,5 +437,3 @@
     }
   }
 }
-
-
