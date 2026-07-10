@@ -33,11 +33,20 @@ function pct(n) {
 
 function loanFromMonthlyPayment(payment, annualRate, amortYears) {
   const n = amortYears * 12;
-  const r = annualRate / 12;
+  // Canadian mortgages quote a nominal annual rate compounded semi-annually.
+  const r = Math.pow(1 + annualRate / 2, 1 / 6) - 1;
   if (payment <= 0) return 0;
   if (r === 0) return payment * n;
   const pow = Math.pow(1 + r, n);
   return (payment * (pow - 1)) / (r * pow);
+}
+
+function monthlyPayment(principal, annualRate, amortYears) {
+  const n = amortYears * 12;
+  const r = Math.pow(1 + annualRate / 2, 1 / 6) - 1;
+  if (principal <= 0) return 0;
+  if (r === 0) return principal / n;
+  return (principal * r) / (1 - Math.pow(1 + r, -n));
 }
 
 function qualifyingRate(contractRate) {
@@ -56,19 +65,19 @@ export default function MortgageAffordabilityCalculator() {
 
   // Inputs
   const [annualIncome, setAnnualIncome] = useState(120000);
-  const [downPayment, setDownPayment] = useState(50000);
+  const [downPayment, setDownPayment] = useState(120000);
 
   // Expenses flyout (RBC-style)
   const [expensesOpen, setExpensesOpen] = useState(false);
-  const [loanPaymentsMonthly, setLoanPaymentsMonthly] = useState(0);
+  const [loanPaymentsMonthly, setLoanPaymentsMonthly] = useState(300);
   const [creditCardBalance, setCreditCardBalance] = useState(0);
   const [creditLineLimit, setCreditLineLimit] = useState(0);
   const [otherDebtMonthly, setOtherDebtMonthly] = useState(0);
   const [condoFeesMonthly, setCondoFeesMonthly] = useState(0);
 
   // Home costs
-  const [propertyTaxMonthly, setPropertyTaxMonthly] = useState(350);
-  const [heatingMonthly, setHeatingMonthly] = useState(150);
+  const [propertyTaxMonthly, setPropertyTaxMonthly] = useState(589);
+  const [heatingMonthly, setHeatingMonthly] = useState(175);
 
   // Mortgage assumptions
   const [contractRatePct, setContractRatePct] = useState(5.0);
@@ -76,8 +85,10 @@ export default function MortgageAffordabilityCalculator() {
   const [amortYears, setAmortYears] = useState(25);
 
   // Qualification caps
-  const gdsCap = 0.39;
-  const tdsCap = 0.44;
+  // Conservative RBC-style affordability ratios. These are intentionally
+  // lower than the maximum 39%/44% ratios used by some lenders.
+  const gdsCap = 0.32;
+  const tdsCap = 0.40;
 
   // Close flyout on ESC
   useEffect(() => {
@@ -135,6 +146,13 @@ export default function MortgageAffordabilityCalculator() {
       rateUsed,
       Number(amortYears) || 25
     );
+    // Qualification uses the stress-test rate, but the payment shown to the
+    // customer must use the contract rate (as in RBC's calculator).
+    const estimatedMonthlyPayment = monthlyPayment(
+      maxMortgage,
+      contractRate,
+      Number(amortYears) || 25
+    );
 
     const dp = clamp(Number(downPayment) || 0, 0, 100_000_000);
     const estHomePrice = maxMortgage + dp;
@@ -158,6 +176,7 @@ export default function MortgageAffordabilityCalculator() {
       mortgagePaymentBudget,
       rateUsed,
       maxMortgage,
+      estimatedMonthlyPayment,
       estHomePrice,
       gds,
       tds,
@@ -736,7 +755,7 @@ export default function MortgageAffordabilityCalculator() {
 
                     <div className="flex items-baseline gap-2">
                       <div className="text-4xl font-extrabold tracking-tight text-text">
-                        {money(derived.mortgagePaymentBudget)}
+                        {money(derived.estimatedMonthlyPayment)}
                       </div>
                       <div className="text-sm text-muted">/month</div>
                     </div>
