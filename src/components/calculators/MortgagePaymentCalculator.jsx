@@ -137,7 +137,7 @@ doc.addImage(logoDataUrl, "PNG", 14, 10, 40, 20);
     doc.setFontSize(10);
     doc.setTextColor(120);
     doc.text("Gaurav Sharma | 2961 Townline Rd, Abbotsford, BC, Canada", 14, pageHeight - 20);
-    doc.text("Email: sgavin.sharma@ymscanada.ca | Phone: 1-604-217-2992", 14, pageHeight - 14);
+    doc.text("Email: sgavin.sharma@ymscanada.ca | Phone: 1-833-498-9898", 14, pageHeight - 14);
 
     doc.save("Mortgage_Amortization_Schedule.pdf");
   };

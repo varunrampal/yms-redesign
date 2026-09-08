@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function WhatsAppMortgageBot() {
-  const phoneNumber = "16042172992"; // your WhatsApp number (no +)
+  const phoneNumber = "18334989898"; // your WhatsApp number (no +)
 
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
