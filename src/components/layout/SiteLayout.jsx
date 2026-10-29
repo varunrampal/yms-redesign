@@ -5,9 +5,9 @@ import Footer from "../footer/Footer.jsx";
 
 export default function SiteLayout() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-hidden">
       <Navbar />
-      <main className="min-h-[calc(100vh-64px)]">
+      <main className="min-h-[calc(100vh-80px)]">
         <Outlet />
       </main>
       <Footer />

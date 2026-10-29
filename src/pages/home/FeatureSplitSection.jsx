@@ -1,54 +1,16 @@
 import { Link } from "react-router-dom";
-import Button from "../../components/ui/Button";
+import { FiArrowRight, FiHome, FiRefreshCw, FiTrendingUp, FiLayers } from "react-icons/fi";
+
+const solutions = [
+  { icon: FiHome, number: "01", title: "Home purchase", text: "Make your next move with a clear budget, a sharper offer and financing built to fit.", href: "/mortgages" },
+  { icon: FiRefreshCw, number: "02", title: "Renew or refinance", text: "Turn renewal time into an opportunity to improve cash flow, terms and flexibility.", href: "/services/refinance" },
+  { icon: FiTrendingUp, number: "03", title: "Investment property", text: "Purpose-built financing strategies for growing a resilient real estate portfolio.", href: "/services" },
+  { icon: FiLayers, number: "04", title: "Equity solutions", text: "Put the value in your home to work for renovations, consolidation or new goals.", href: "/services" },
+];
 
 export default function FeatureSplitSection() {
-return (
-<section className="bg-[#efefef] py-14 md:py-20">
-<div className="mx-auto grid max-w-7xl items-center gap-10 px-6 md:grid-cols-2">
-{/* Left image card */}
-<div className="relative">
-<div className="overflow-hidden rounded-[44px] rounded-bl-[120px] bg-white shadow-xl ring-1 ring-slate-200">
-  <img
-    src="/gaurav.png"
-    alt="Gaurav Sharma"
-    className="h-[360px] w-full object-contain md:h-[520px]"
-  />
-</div>
-
-</div>
-
-
-{/* Right content */}
-<div className="md:pl-10">
-<div className="h-1 w-24 bg-[#0069a8]" />
-
-
-<h2 className="mt-6 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl">
-Gaurav Sharma</h2>
-
-<h2 className="mt-6 text-4xl font-extrabold leading-tight text-slate-900 md:text-2xl">Mortgage Advisor</h2>
-
-
-
-<p className="mt-6 text-lg text-slate-800">
-Simple process. Honest advice. The right mortgage for your next move.
-</p>
-
-
-<p className="mt-5 max-w-xl leading-relaxed text-slate-800">
-With 10+ years of experience, I offer clear, honest guidance and mortgage solutions tailored to your goals—so you feel confident at every step.
-From first-time purchases and refinancing to investing, debt consolidation, and home equity access, we’ll choose the best option for your future plan.
-</p>
-
-
-<div className="mt-10">
-
-  <Button href="/mortgageapplication" variant="gold">
-   Apply Now
-  </Button>
-</div>
-</div>
-</div>
-</section>
-);
+  return <section id="solutions" className="solutions-section"><div className="premium-container">
+    <div className="section-heading"><div><div className="eyebrow dark"><span /> Tailored solutions</div><h2>Your goals deserve more than an off-the-shelf mortgage.</h2></div><p>Every recommendation starts with your full financial picture and ends with a strategy you can feel confident signing.</p></div>
+    <div className="solution-grid">{solutions.map(({ icon: Icon, number, title, text, href }) => <Link to={href} className="solution-card" key={title}><div className="solution-top"><span>{number}</span><Icon /></div><h3>{title}</h3><p>{text}</p><span className="card-link">Explore solution <FiArrowRight /></span></Link>)}</div>
+  </div></section>;
 }
